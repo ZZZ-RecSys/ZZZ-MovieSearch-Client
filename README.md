@@ -1,4 +1,6 @@
-### ZZZ- Movie Recommender App
+# ZZZ- Movie Recommender App
+![image](https://github.com/ZZZ-RecSys/ZZZ-MovieSearch-Client/assets/18610590/211c3c31-7c9e-47b9-81ef-5210c4f1ed73)
+
 
 Follow the instruction in https://aiven.io/developer/building-a-movie-recommender
 

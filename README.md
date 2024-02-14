@@ -10,8 +10,6 @@ This repository facilitates the integration of a comprehensive movie dataset fro
 
 ## Getting Started
 
-# Project Setup Guide
-
 This guide walks you through setting up a Node.js application that connects to a PostgreSQL database using environment variables for configuration.
 
 ## Prerequisites

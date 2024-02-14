@@ -6,6 +6,8 @@ We followed the instructions at https://aiven.io/developer/building-a-movie-reco
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+This repository facilitates the integration of a comprehensive movie dataset from Kaggle into a PostgreSQL database, setting the foundation for a sophisticated movie recommendation system. Visit the [ZZZ-MovieRecSystem](https://github.com/ZZZ-RecSys/ZZZ-MovieRecSystem) to populate your database.
+
 ## Getting Started
 
 # Project Setup Guide
@@ -44,14 +46,18 @@ PG_PORT=<your_database_port>
 ### Step 4: Download SSL Certificate
 - Download the certificate `ca.pem` from [https://console.aiven.io/] and place it in your project.
 
-### Step 5: Run Development Server
+### Step 5: Populate the PostgreSQL Database
+
+Before running the development server, ensure your PostgreSQL database is populated with the initial dataset, located in [ZZZ-MovieRecSystem](https://github.com/ZZZ-RecSys/ZZZ-MovieRecSystem)
+
+### Step 6: Run Development Server
 Start the development server with:
 
 ```bash
 npm run dev
 ```
 
-### Step 6: Access the Application
+### Step 7: Access the Application
 With the development server running, access your application through the browser at [http://localhost:3000](http://localhost:3000)
 
 

@@ -13,7 +13,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 1, install node:
 2. install npm
 3. cd proj root, npm install
-4.  run the development server
+4. Create .env and add PG_NAME , PG_PASSWORD ,PG_HOST and PG_PORT properties
+5. Create and then Download the certificate ca.pem from https://console.aiven.io/ or contact the stakeholders.
+6.  run the development server
 
 ```bash
 npm run dev

@@ -8,17 +8,53 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+# Project Setup Guide
 
+This guide walks you through setting up a Node.js application that connects to a PostgreSQL database using environment variables for configuration.
 
-1, install node:
-2. install npm
-3. cd proj root, npm install
-4. Create .env and add PG_NAME , PG_PASSWORD ,PG_HOST and PG_PORT properties
-5. Create and then Download the certificate ca.pem from https://console.aiven.io/ or contact the stakeholders.
-6.  run the development server
+## Prerequisites
+
+- Node.js and npm installed on your machine. You can download them from [Node.js official website](https://nodejs.org/).
+
+## Setup Instructions
+
+### Step 1: Install Node.js
+
+Ensure Node.js (which includes npm) is installed on your system. You can verify by running `node -v` and `npm -v` in your terminal.
+
+### Step 2: Initialize Project
+
+Navigate to your project's root directory in the terminal and install dependencies:
+
+```bash
+cd /path/to/your/project
+npm install
+```
+
+### Step 3: Configure Environment Variables
+Create a `.env` file in the project root with the following content:
+
+```bash
+PG_NAME=<your_database_name>
+PG_PASSWORD=<your_database_password>
+PG_HOST=<your_database_host>
+PG_PORT=<your_database_port>
+```
+
+### Step 4: Download SSL Certificate
+- Download the certificate `ca.pem` from [https://console.aiven.io/] and place it in your project.
+
+### Step 5: Run Development Server
+Start the development server with:
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Step 6: Access the Application
+With the development server running, access your application through the browser at [http://localhost:3000](http://localhost:3000)
+
+
+## Additional Information
+Ensure your database client uses SSL/TLS with `ca.pem`.
+

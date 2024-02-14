@@ -59,6 +59,13 @@ npm run dev
 With the development server running, access your application through the browser at [http://localhost:3000](http://localhost:3000)
 
 
-## Additional Information
-Ensure your database client uses SSL/TLS with `ca.pem`.
+## Additional Information and Resources
+
+- **Certificates**: Ensure your database client uses SSL/TLS with `ca.pem`.
+
+- **DevPost**: For a detailed narrative on the project's evolution and insights, visit the [DevPost project page](https://devpost.com/software/zzz-movie-recommender?ref_content=user-portfolio&ref_feature=in_progress).
+
+- **Dataset**: The source of the dataset is available on [Kaggle](https://www.kaggle.com/datasets/jrobischon/wikipedia-movie-plots), providing a rich repository of movie plots.
+ Visit the [ZZZ-MovieRecSystem](https://github.com/ZZZ-RecSys/ZZZ-MovieRecSystem) to populate your database.
+
 

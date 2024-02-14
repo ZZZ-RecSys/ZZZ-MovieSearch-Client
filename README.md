@@ -10,10 +10,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 
 
-First, install node:
-
-
-Second,  run the development server:
+1, install node:
+2. install npm
+3. cd proj root, npm install
+4.  run the development server
 
 ```bash
 npm run dev

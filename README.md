@@ -81,3 +81,9 @@ With the development server running, access your application through the browser
  Visit the [ZZZ-MovieRecSystem](https://github.com/ZZZ-RecSys/ZZZ-MovieRecSystem) to populate your database.
 
 
+## Contributors
+- Yiwei Zhang
+- Shizhe Zhang
+- Weiran Zhao
+
+

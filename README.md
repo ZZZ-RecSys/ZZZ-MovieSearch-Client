@@ -1,15 +1,13 @@
 # ZZZ - Movie Recommender App
 ![image](https://github.com/ZZZ-RecSys/ZZZ-MovieSearch-Client/assets/18610590/211c3c31-7c9e-47b9-81ef-5210c4f1ed73)
 
-# Technology Framework
+## Technology Framework
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This project is developed with [Next.js](https://nextjs.org/), initiated using [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It builds upon the [ZZZ-Movie RecSystem Data Pre-processing](https://github.com/ZZZ-RecSys/ZZZ-MovieRecSystem) repository, which imports a comprehensive movie dataset from Kaggle into a PostgreSQL database and enriches it with vector embeddings for each movie title.
 
-This repository is a subsequent implementation connecting the populated database from [ZZZ-Movie RecSystem Data Pre-processing](https://github.com/ZZZ-RecSys/ZZZ-MovieRecSystem). The pre-processing repository imported the movie dataset from Kaggle into a PostgreSQL database and added corresponding vector embeddings for each movie.
+To enhance the search functionality, our Movie Recommender App employs TensorFlow's [Universal Sentence Encoder](https://www.tensorflow.org/hub/tutorials/semantic_similarity_with_tf_hub_universal_encoder) for advanced semantic vector retrieval. Then we present search results through a responsive interface built with `React` and `Next.js`.
 
-On top of that, this Movie Recommender App, leveraging TensorFlow's Universal Sentence Encoder, enhances search functionalities through semantic vector retrieval, showcasing results within a dynamic `React` and `Next.js` interface.
-
-We implemented modifications, inspired by Aiven's guide on building a movie recommender, to enhance the user interface and API. These improvements lay the groundwork for the forthcoming feature of personalized recommendations, which will leverage users' search histories.
+Guided by insights from Aiven's [guide on building a movie recommender](https://aiven.io/developer/building-a-movie-recommender), we've made enhancements to both the user interface and API. These updates serve as a foundation for a feature currently in development, which will offer personalized recommendations by analyzing users' search histories.
 
 ## Getting Started
 

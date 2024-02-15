@@ -1,12 +1,15 @@
 # ZZZ - Movie Recommender App
 ![image](https://github.com/ZZZ-RecSys/ZZZ-MovieSearch-Client/assets/18610590/211c3c31-7c9e-47b9-81ef-5210c4f1ed73)
 
-
-We followed the instructions at https://aiven.io/developer/building-a-movie-recommender
+# Technology Framework
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-This repository facilitates the integration of a comprehensive movie dataset from Kaggle into a PostgreSQL database, setting the foundation for a sophisticated movie recommendation system. Visit the [ZZZ-MovieRecSystem](https://github.com/ZZZ-RecSys/ZZZ-MovieRecSystem) to populate your database.
+This repository is a subsequent implementation connecting the populated database from [ZZZ-Movie RecSystem Data Pre-processing](https://github.com/ZZZ-RecSys/ZZZ-MovieRecSystem). The pre-processing repository imported the movie dataset from Kaggle into a PostgreSQL database and added corresponding vector embeddings for each movie.
+
+On top of that, this Movie Recommender App, leveraging TensorFlow's Universal Sentence Encoder, enhances search functionalities through semantic vector retrieval, showcasing results within a dynamic `React` and `Next.js` interface.
+
+We implemented modifications, inspired by Aiven's guide on building a movie recommender, to enhance the user interface and API. These improvements lay the groundwork for the forthcoming feature of personalized recommendations, which will leverage users' search histories.
 
 ## Getting Started
 
@@ -48,7 +51,7 @@ PG_PORT=<your_database_port>
 
 Before running the development server, ensure your PostgreSQL database is populated with the initial dataset, located in [ZZZ-MovieRecSystem](https://github.com/ZZZ-RecSys/ZZZ-MovieRecSystem)
 
-### Step 6: Run Development Server
+### Step 6: Run the Development Server
 Start the development server with:
 
 ```bash
@@ -58,6 +61,10 @@ npm run dev
 ### Step 7: Access the Application
 With the development server running, access your application through the browser at [http://localhost:3000](http://localhost:3000)
 
+## Upcoming Enhancements
+
+1. Implementing personalized recommendation features utilizing users' search histories for a more tailored experience.
+2. Deploying the web application to a public domain for broader accessibility.
 
 ## Additional Information and Resources
 

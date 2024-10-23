@@ -1,18 +1,20 @@
-import {useRef, useState} from 'react';
+import {useRef, useState, useEffect} from 'react';
 import type Movie from 'movie.d.ts'
 
 export default function Home() {
     const [moviePlots, setMoviePlots] = useState<Movie[]>([])
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [recommendations, setRecommendations] = useState<Movie[]>([])
     const searchInput = useRef();
 
     function search(event) {
         event.preventDefault();
         setIsLoading(true);
         const enteredSearch = searchInput.current.value;
-        fetch('/api/recommendations', {
+        fetch('/api/search', {
             method: 'POST',
             body: JSON.stringify({
+                userId: "TestUser1" ,
                 search: enteredSearch
             }),
             headers: {
@@ -23,6 +25,17 @@ export default function Home() {
             setIsLoading(false)
         });
     }
+
+    useEffect(() => {
+        fetch('/api/recommendations', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => response.json()).then(data => {
+            setRecommendations(data);
+        });
+    }, [])
 
     return (
         <>
@@ -92,6 +105,32 @@ export default function Home() {
                             ></p>
                         </div>
                     </div>)}
+                {recommendations.length > 0 && (
+                    <div className="flex gap-8 flex-wrap flex-col grow shrink items-start mx-24">
+                        <h2 className="text-2xl font-bold mb-4">Recommended Movies</h2>
+                        {recommendations.map(item =>
+                            <div key={item.title}
+                                 className="relative p-10 rounded-xl binline-block justify-start rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-darkBlue items-start">
+                                <div className="text-6xl absolute top-4 right-4 opacity-80">🍿</div>
+                                <div>
+                                    <h4 className="opacity-90 text-xl">From {item.director}</h4>
+                                    <p className="opacity-50 text-sm">Year {item.year}</p>
+                                </div>
+                                <h1 className="text-4xl mt-6">{item.title}</h1>
+                                <p className="relative mt-6 text opacity-80 italic">
+                                    {item.plot}
+                                </p>
+                                <div>
+                                    <p className="opacity-50 text-sm mt-6"><a
+                                        href={item.wiki}
+                                        className="underline decoration-transparent transition duration-300 ease-in-out hover:decoration-inherit"
+                                    >{item.wiki}</a
+                                    ></p>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                )}
             </div>
         </>
     )

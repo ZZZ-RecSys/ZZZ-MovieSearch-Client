@@ -8,6 +8,9 @@
 
 ![image](https://github.com/ZZZ-RecSys/ZZZ-MovieSearch-Client/assets/18610590/211c3c31-7c9e-47b9-81ef-5210c4f1ed73)
 
+> [!NOTE]
+> **Status (2026-08): this is the Phase 1 client.** The backend it points at, [`ZZZ-MovieRecSystem`](https://github.com/ZZZ-RecSys/ZZZ-MovieRecSystem), was later rewritten into a self-contained TF-IDF/SVD pipeline with no external database — see that repo's "Project History & Repository Map" section for the full timeline. This repo (and the PostgreSQL/pgvector/TensorFlow setup documented below) reflects the original Feb 2024 hackathon build.
+
 ## Technology Framework
 
 This project is developed with [Next.js](https://nextjs.org/), initiated using [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It builds upon the [ZZZ-Movie RecSystem Data Pre-processing](https://github.com/ZZZ-RecSys/ZZZ-MovieRecSystem) repository, which imports a comprehensive movie dataset from Kaggle into a PostgreSQL database and enriches it with vector embeddings for each movie title.

@@ -86,7 +86,7 @@ With the development server running, access your application through the browser
 
 ## Contributors
 - Yiwei Zhang (Engineering)
-- Weiran Zhao (Engineering)
+- Weiran Zhao (Research & Documentation)
 - Shizhe Zhang (Ideation)
 
 

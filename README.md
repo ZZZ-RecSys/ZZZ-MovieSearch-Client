@@ -9,7 +9,7 @@
 ![image](https://github.com/ZZZ-RecSys/ZZZ-MovieSearch-Client/assets/18610590/211c3c31-7c9e-47b9-81ef-5210c4f1ed73)
 
 > [!NOTE]
-> **Status (2026-08): this is the Phase 1 client.** The backend it points at, [`ZZZ-MovieRecSystem`](https://github.com/ZZZ-RecSys/ZZZ-MovieRecSystem), was later rewritten into a self-contained TF-IDF/SVD pipeline with no external database — see that repo's "Project History & Repository Map" section for the full timeline. This repo (and the PostgreSQL/pgvector/TensorFlow setup documented below) reflects the original Feb 2024 hackathon build.
+> **Status (2026-08): this is the Phase 1 client.** The backend it points at, [`ZZZ-MovieRecSystem`](https://github.com/ZZZ-RecSys/ZZZ-MovieRecSystem), was later rewritten into a self-contained TF-IDF/SVD pipeline with no external database — see that repo's "Project Evolution" section for the 3-phase timeline. This repo (and the PostgreSQL/pgvector/TensorFlow setup documented below) reflects the original Feb 2024 hackathon build.
 
 ## Technology Framework
 

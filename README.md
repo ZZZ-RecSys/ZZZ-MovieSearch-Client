@@ -9,7 +9,47 @@
 ![image](https://github.com/ZZZ-RecSys/ZZZ-MovieSearch-Client/assets/18610590/211c3c31-7c9e-47b9-81ef-5210c4f1ed73)
 
 > [!NOTE]
-> **Status (2026-08): this is the Phase 1 client.** The backend it points at, [`ZZZ-MovieRecSystem`](https://github.com/ZZZ-RecSys/ZZZ-MovieRecSystem), was later rewritten into a self-contained TF-IDF/SVD pipeline with no external database — see that repo's "Project Evolution" section for the 3-phase timeline. This repo (and the PostgreSQL/pgvector/TensorFlow setup documented below) reflects the original Feb 2024 hackathon build.
+> **Status (2026-08): Phase 2 Frontend Client.** This repository is the frontend search interface for the Phase 2 dual-repo architecture. The backend data ingestion and pgvector database setup lives in [`ZZZ-MovieRecSystem`](https://github.com/ZZZ-RecSys/ZZZ-MovieRecSystem), which in Phase 3 was rewritten into a consolidated, zero-database Next.js app.
+
+## Project Evolution & Repository Map (3 Phases)
+
+```mermaid
+flowchart LR
+    subgraph P1 ["Phase 1: Concept & Initial Research (Feb 2024)"]
+        direction TB
+        O1["Oracle Cloud & DB Stack"]
+        O2["❌ Heavyweight, high coupling & deployment friction"]
+        O1 --> O2
+    end
+
+    subgraph P2 ["Phase 2: Hackathon Dual-Repo Architecture (Feb 2024)"]
+        direction TB
+        subgraph P2B ["Backend: ZZZ-MovieRecSystem"]
+            TF["TensorFlow.js (USE)<br/>encoder.js"] --> PG[("PostgreSQL + pgvector<br/>(Aiven Hosted)")]
+        end
+        subgraph P2F ["Frontend (This Repo): ZZZ-MovieSearch-Client"]
+            FE["Next.js Search Client<br/>pgvector L2 Distance Query"]
+        end
+        FE <-->|"SQL &lt;-&gt; Distance"| PG
+    end
+
+    subgraph P3 ["Phase 3: Unified Standalone App (Oct 2025)"]
+        direction TB
+        V1["Consolidated Next.js App<br/>(Single Vercel Deployment)"]
+        V2["In-Process ML Pipeline<br/>TF-IDF → Truncated SVD → Cosine Sim"]
+        V1 --- V2
+        V3["✅ Zero External Database & Zero Dependency"]
+    end
+
+    P1 -->|Pivot to open vector stack| P2
+    P2 -->|Consolidate & eliminate DB| P3
+```
+
+| Phase | Architecture & Repos | Details & Outcome | Team |
+|---|---|---|---|
+| **Phase 1: Research** (Feb 2024) | Oracle Cloud Ecosystem | Explored Oracle full-stack DB architecture; dropped due to tight coupling and deployment complexity | Yiwei Zhang (Lead), [Weiran Zhao](https://github.com/weiranzhao97) (Research) |
+| **Phase 2: Dual-Repo MVP** (Feb 2024) | **Dual-Repo Pipeline**:<br/>• **Backend Ingestion**: [`ZZZ-MovieRecSystem`](https://github.com/ZZZ-RecSys/ZZZ-MovieRecSystem) (dataset ingestion, TF.js USE embedding, Postgres pgvector)<br/>• **Frontend Client (This Repo)**: [`ZZZ-MovieSearch-Client`](https://github.com/ZZZ-RecSys/ZZZ-MovieSearch-Client) (Next.js UI, real-time pgvector `<->` vector search) | Full vector search pipeline built for Global Hack Week: AI/ML; write-up on [DevPost](https://devpost.com/software/zzz-movie-recommender) | Yiwei Zhang (Engineering), [Weiran Zhao](https://github.com/weiranzhao97) (Docs & Research), [Shizhe Zhang](https://github.com/zhang-shizhe) (Ideation) |
+| **Phase 3: Unified Standalone** (Oct 2025) | Unified Next.js on Vercel ([`ZZZ-MovieRecSystem`](https://github.com/ZZZ-RecSys/ZZZ-MovieRecSystem) current `main`) | Consolidated frontend and backend into a single zero-database app; runs TF-IDF + Truncated SVD in-process on Vercel | Yiwei Zhang (Solo refactor & delivery) |
 
 ## Technology Framework
 
